@@ -50,6 +50,31 @@ import kotlin.ranges.coerceAtLeast
 import kotlin.ranges.coerceIn
 
 
+/**
+ * A composable function that creates a "Slide to Confirm" slider UI component.
+ * This allows the user to slide a knob across the slider to confirm an action.
+ * Useful for actions that require a deliberate user confirmation to prevent accidental triggers.
+ *
+ * @param modifier The Modifier to be applied to the slider container.
+ * @param threshold The percentage of the slider that must be completed to trigger confirmation, range 0.0 to 1.0.
+ * @param sliderContainerWidth The width of the slider knob container in Dp.
+ * @param sliderIcon The drawable resource ID for the icon displayed on the slider knob.
+ * @param sliderSize The size of the slider knob in Dp.
+ * @param sliderTintColor The tint color applied to the slider knob icon.
+ * @param sliderBackgroundColor The background color of the slider knob.
+ * @param defaultBackgroundColor The background color of the slider when in the default unconfirmed state.
+ * @param swipedBackgroundColor The background color of the slider once it has been swiped to confirmation.
+ * @param borderRadius The corner radius of the slider container and slider knob background in Dp.
+ * @param borderWidth The width of the border surrounding the slider in Dp.
+ * @param borderColor The color of the border surrounding the slider.
+ * @param engageText The text displayed inside the slider when in the default unconfirmed state.
+ * @param engageTextStyle The text style applied to the engageText when in the unconfirmed state.
+ * @param confirmedText The text displayed inside the slider when confirmation is complete.
+ * @param confirmedTextStyle The text style applied to the confirmedText.
+ * @param vibrationMilliseconds The duration of vibration in milliseconds upon successful confirmation.
+ * @param defaultStatus The initial status of the slider, whether it starts in the confirmed or unconfirmed state.
+ * @param onConfirmed A lambda function to be executed when the slider reaches the confirmation position.
+ */
 @Composable
 fun SlideToConfirm(
     modifier: Modifier = Modifier,
