@@ -36,7 +36,7 @@ private fun SliderDemo1() {
         SlideToConfirm(
             modifier = Modifier
                 .height(60.dp)
-                .background(color = Color.White),
+                .background(color = Color.Transparent),
             borderColor = Color(0xFF484EAA),
             defaultBackgroundColor = Color.White,
             swipedBackgroundColor = Color(0xFFD81B60),
@@ -54,7 +54,7 @@ private fun SliderDemo2() {
         SlideToConfirm(
             modifier = Modifier
                 .height(60.dp)
-                .background(color = Color.White),
+                .background(color = Color.Transparent),
             sliderIcon = com.chinalwb.compose.slidetoconfirm.R.drawable.arrow,
             sliderBackgroundColor = Color(0xFF484EAA),
             sliderTintColor = Color(0xFFD81B60),
@@ -81,7 +81,7 @@ private fun SliderDemo3() {
         SlideToConfirm(
             modifier = Modifier
                 .height(60.dp)
-                .background(color = Color.White),
+                .background(color = Color.Transparent),
             sliderIcon = com.chinalwb.compose.slidetoconfirm.R.drawable.arrow_hand,
             sliderBackgroundColor = Color(0xFF484EAA),
             sliderSize = 24.dp,
