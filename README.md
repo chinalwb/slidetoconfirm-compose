@@ -1,32 +1,40 @@
+<p align="center">
+<img align="center" src="./assets/slide_to_confirm.gif" />
+</p>
+
 # slidetoconfirm-compose [![](https://jitpack.io/v/chinalwb/slidetoconfirm-compose.svg)](https://jitpack.io/#chinalwb/slidetoconfirm-compose)
 
 
-A reusable **“Slide to confirm”** component for **Jetpack Compose**.  
-Useful for actions that require an extra, deliberate confirmation (e.g. destructive actions, payments, logouts).
+#### A reusable **“Slide to confirm”** component for **Jetpack Compose**.  
+
+- Use it when you have any actions that require an extra, deliberate confirmation (e.g. `payments`, `logouts`, `destructive actions`).
+- For using it in legacy view system, refer to the [Slide to confirm](https://github.com/chinalwb/slidetoconfirm). 
+- Refer to the [demo app](https://github.com/chinalwb/slidetoconfirm-compose/tree/main/app) for a sample implementation.
 
 
+### Quick demo
 ![State persistent](https://raw.githubusercontent.com/chinalwb/slidetoconfirm-compose/refs/heads/main/assets/slide_to_confirm_compose_video.gif)
 
 ---
 
 ## Features
 
-- Jetpack Compose `@Composable` API
-- Customizable colors, texts, sizes, and corner radii
+- Jetpack Compose Support
+- Flexible customization options, like slider icon, border, radii corners, text, colors, etc.
 - Configurable confirmation threshold
 - Optional haptic feedback (vibration) on success
 - Simple callback when confirmation is completed
 - Preview-friendly and easy to integrate in existing UIs
+- State persistence across configuration changes, process death, and screen rotations
 
 ---
 
-### What does it look like?
+#### What does it look like?
 <img src="https://raw.githubusercontent.com/chinalwb/slidetoconfirm-compose/refs/heads/main/assets/slide_to_confirm_compose_pics.png" width="360" />
 
 
 ---
-## Usage
-### Parameter reference
+## Parameters reference
 
 | Parameter                   | Type                     | Description                                                                                                                                                          |
 |----------------------------|--------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -58,26 +66,65 @@ This library is published as an Android AAR.
 ### 1. Add JitPack (if used from GitHub)
 
 If you are consuming this from GitHub via JitPack, add the repository in your root `settings.gradle.kts` or `build.gradle.kts`:
-```
-kotlin
-dependencyResolutionManagement {
-repositories {
-google()
-mavenCentral()
-maven(url = "https://jitpack.io")
+
+
+- gradle.kts
+```kotlin
+allprojects {
+    repositories {
+        maven { url = uri("https://jitpack.io") }
+    }
 }
+```
+
+- gradle
+
+```groovy
+allprojects {
+    repositories {
+        maven { url 'https://jitpack.io' }
+    }
 }
 ```
+
 ### 2. Add the dependency
 
 In your app module’s `build.gradle.kts`:
 ```
-kotlin
-dependencies {
-implementation("com.github.chinalwb:compose-slidetoconfirm:1.0.0")
+    dependencies {
+        implementation("com.github.chinalwb:compose-slidetoconfirm:1.0.0")
+    }
+```
+
+### 3. Usage
+
+In your Compose UI:
+```kotlin
+SlideToConfirm(
+    modifier = Modifier
+        .height(60.dp)
+        .background(color = Color.Transparent),
+    sliderIcon = com.chinalwb.compose.slidetoconfirm.R.drawable.arrow,
+    sliderBackgroundColor = Color(0xFF484EAA),
+    sliderTintColor = Color(0xFFD81B60),
+    sliderSize = 24.dp,
+    sliderContainerWidth = 80.dp,
+    borderColor = Color(0xFF484EAA),
+    borderWidth = 2.dp,
+    borderRadius = 30.dp,
+    defaultBackgroundColor = Color.White,
+    swipedBackgroundColor = Color(0xFFD81B60),
+    engageText = "Slide to stop billing",
+    engageTextStyle = TextStyle(fontSize = 17.sp, color = Color(0xFFD81B60)),
+    defaultStatus = SlideToConfirmStatus.INIT
+) {
+    Log.d("xx", "SlideToConfirmTest: confirmed!")
 }
 ```
-(Version may change; check the repository releases for the latest.)
+
+And you will see:
+
+<img src="https://raw.githubusercontent.com/chinalwb/slidetoconfirm-compose/refs/heads/main/assets/usage_screenshot.png" width="360" />
 
 ---
 
