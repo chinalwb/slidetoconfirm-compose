@@ -1,4 +1,5 @@
-# slidetoconfirm-compose
+# slidetoconfirm-compose [![](https://jitpack.io/v/chinalwb/slidetoconfirm-compose.svg)](https://jitpack.io/#chinalwb/slidetoconfirm-compose)
+
 
 A reusable **“Slide to confirm”** component for **Jetpack Compose**.  
 Useful for actions that require an extra, deliberate confirmation (e.g. destructive actions, payments, logouts).
