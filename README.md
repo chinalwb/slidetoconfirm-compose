@@ -3,6 +3,9 @@
 A reusable **“Slide to confirm”** component for **Jetpack Compose**.  
 Useful for actions that require an extra, deliberate confirmation (e.g. destructive actions, payments, logouts).
 
+
+![State persistent](https://raw.githubusercontent.com/chinalwb/slidetoconfirm-compose/refs/heads/main/assets/slide_to_confirm_compose_video.gif)
+
 ---
 
 ## Features
@@ -16,7 +19,11 @@ Useful for actions that require an extra, deliberate confirmation (e.g. destruct
 
 ---
 
+### What does it look like?
+<img src="https://raw.githubusercontent.com/chinalwb/slidetoconfirm-compose/refs/heads/main/assets/slide_to_confirm_compose_pics.png" width="360" />
 
+
+---
 ## Usage
 ### Parameter reference
 
