@@ -221,8 +221,8 @@ private fun SliderKnob(
 ) {
     val sliderShape = RoundedCornerShape(
         topStart = borderRadius,
-        topEnd = 0.dp,
-        bottomEnd = 0.dp,
+        topEnd = borderRadius,
+        bottomEnd = borderRadius,
         bottomStart = borderRadius
     )
     val scope = rememberCoroutineScope()
