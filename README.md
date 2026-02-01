@@ -126,7 +126,6 @@ And you will see:
 
 <img src="https://raw.githubusercontent.com/chinalwb/slidetoconfirm-compose/refs/heads/main/assets/usage_screenshot.png" width="360" />
 
----
 
 ## License
 MIT.
