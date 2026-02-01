@@ -128,7 +128,5 @@ And you will see:
 
 ---
 
----
-
 ## License
 MIT.
