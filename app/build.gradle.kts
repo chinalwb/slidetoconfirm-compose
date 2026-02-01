@@ -58,6 +58,8 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
 
+    implementation(libs.slidetoconfirm.compose)
 
-    implementation(project(":slidetoconfirm"))
+
+//    implementation(project(":slidetoconfirm"))
 }
