@@ -9,6 +9,13 @@ val PUBLISH_GROUP_ID = "com.github.chinalwb"
 val PUBLISH_ARTIFACT_ID = "compose-slidetoconfirm"
 val PUBLISH_VERSION = "1.0.0"
 
+/**
+ * How to create a new build to JitPack?
+ * Steps:
+ * 1 - Create a new release via Github: https://github.com/chinalwb/slidetoconfirm-compose
+ * 2 - Go to JitPack: https://jitpack.io/#chinalwb/slidetoconfirm-compose
+ * 3 - JitPack will automatically build the latest release
+ */
 afterEvaluate {
     publishing {
         publications {
