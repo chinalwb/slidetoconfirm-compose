@@ -20,6 +20,17 @@ afterEvaluate {
                 version = PUBLISH_VERSION
             }
         }
+
+        // Running:
+        // ./gradlew publish
+        // will generate the artifact at:
+        // ./slidetoconfirm-compose/slidetoconfirm/build/repo
+        repositories {
+            maven {
+                // This creates a repo folder in your project root
+                url = uri(layout.buildDirectory.dir("repo").get().asFile)
+            }
+        }
     }
 }
 
