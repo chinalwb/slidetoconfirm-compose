@@ -9,12 +9,13 @@ import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 
 private val DarkColorScheme = darkColorScheme(
     primary = Purple80,
     secondary = PurpleGrey80,
-    tertiary = Pink80
+    tertiary = Pink80,
 )
 
 private val LightColorScheme = lightColorScheme(
@@ -41,6 +42,10 @@ fun SlideToConfirmTheme(
     content: @Composable () -> Unit
 ) {
     val colorScheme = when {
+        // Reads the system’s dynamic colors (the “Material You” palette derived from the user’s wallpaper) on
+        // Android 12+.
+        // Builds a full ColorScheme for dark theme from those dynamic colors.
+        // Returns that ColorScheme so you can pass it into MaterialTheme.
         dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
             val context = LocalContext.current
             if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
