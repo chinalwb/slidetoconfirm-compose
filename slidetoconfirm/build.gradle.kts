@@ -5,63 +5,23 @@ plugins {
     id("maven-publish")
 }
 
-
-
-val androidSourcesJar by tasks.registering(Jar::class) {
-    archiveClassifier.set("sources")
-    from(android.sourceSets["main"].java.srcDirs)
-}
-
-val androidJavadocs by tasks.registering(Javadoc::class) {
-    isFailOnError = false
-    source(android.sourceSets["main"].java.srcDirs)
-    classpath += files(
-        "${android.sdkDirectory}/platforms/${android.compileSdkVersion}/android.jar"
-    )
-}
-
 val PUBLISH_GROUP_ID = "com.github.chinalwb"
 val PUBLISH_ARTIFACT_ID = "compose-slidetoconfirm"
 val PUBLISH_VERSION = "1.0.0"
 
-publishing {
-    publications {
-        create<MavenPublication>("release") {
-            groupId = PUBLISH_GROUP_ID
-            artifactId = PUBLISH_ARTIFACT_ID
-            version = PUBLISH_VERSION
-
-            // Android AAR
-            afterEvaluate {
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("mavenAar") {
                 from(components["release"])
+
+                groupId = PUBLISH_GROUP_ID
+                artifactId = PUBLISH_ARTIFACT_ID
+                version = PUBLISH_VERSION
             }
-
-            artifact(androidSourcesJar.get().archiveFile) {
-                builtBy(androidSourcesJar)
-            }
-
-            pom {
-                name.set(PUBLISH_ARTIFACT_ID)
-                description.set("Slide to confirm component for Jetpack Compose")
-                url.set("https://github.com/chinalwb/slidetoconfirm-compose")
-
-                licenses {
-                    license {
-                        name.set("Apache-2.0")
-                        url.set("https://www.apache.org/licenses/LICENSE-2.0")
-                    }
-                }
-            }
-        }
-    }
-
-    repositories {
-        maven {
-            url = uri("${buildDir}/release/${PUBLISH_VERSION}")
         }
     }
 }
-
 
 
 android {
