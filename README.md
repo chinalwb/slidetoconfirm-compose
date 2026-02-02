@@ -63,7 +63,7 @@
 
 This library is published as an Android AAR.
 
-### 1. Add JitPack (if used from GitHub)
+### 1. Add JitPack
 
 If you are consuming this from GitHub via JitPack, add the repository in your root `settings.gradle.kts` or `build.gradle.kts`:
 
